@@ -18,7 +18,8 @@
 	<modules>
 		<module>datacenter</module>
         <module>entity</module>
-    </modules>
+		<module>core</module>
+	</modules>
 
 	<properties>
 		<java.version>1.8</java.version>
