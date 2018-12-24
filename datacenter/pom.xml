@@ -19,20 +19,24 @@
 		<dependency>
 			<groupId>com.lwb</groupId>
 			<artifactId>core</artifactId>
-			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<mainClass>DatacenterApplication</mainClass>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.lwb</groupId>
+				<artifactId>datacenter-service</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.lwb</groupId>
+				<artifactId>datacenter-controller</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
 
 </project>

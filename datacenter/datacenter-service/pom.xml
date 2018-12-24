@@ -39,5 +39,21 @@
             <version>${shiro-spring-boot-web-starter.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.lwb</groupId>
+            <artifactId>entity</artifactId>
+        </dependency>
+
     </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*dao.xml</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
 </project>

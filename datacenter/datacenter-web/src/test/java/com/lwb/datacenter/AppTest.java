@@ -1,4 +1,4 @@
-package com.lwb;
+package com.lwb.datacenter;
 
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
