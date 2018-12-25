@@ -4,7 +4,8 @@ import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.BeanFactoryAware;
+import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.stereotype.Component;
 
 /**
@@ -13,13 +14,13 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class SpringUtil implements BeanFactoryAware {
+public class SpringUtil implements BeanFactoryPostProcessor {
 
     static BeanFactory beanFactory;
 
     @Override
-    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-        SpringUtil.beanFactory = beanFactory;
+    public void postProcessBeanFactory(ConfigurableListableBeanFactory configurableListableBeanFactory) throws BeansException {
+        SpringUtil.beanFactory = configurableListableBeanFactory;
     }
 
     public static <T> T getBean(String name) {

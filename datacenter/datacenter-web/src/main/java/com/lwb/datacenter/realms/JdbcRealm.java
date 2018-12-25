@@ -19,7 +19,7 @@ public class JdbcRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         UsernamePasswordToken token = (UsernamePasswordToken) authenticationToken;
         UserService userService = SpringUtil.getBean(UserService.class);
-        User user = userService.get(token.getUsername());
+        User user = userService.getUserByName(token.getUsername());
         if (Objects.isNull(user)) {
             throw new RuntimeException("用户名不存在");
         }

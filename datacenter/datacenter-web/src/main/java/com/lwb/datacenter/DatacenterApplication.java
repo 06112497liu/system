@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author liuweibo
  * @date 2018/12/23
  */
-@SpringBootApplication
-@MapperScan(basePackages = "com.lwb")
+@SpringBootApplication(scanBasePackages = "com.lwb")
+@MapperScan(basePackages = "com.lwb.datacenter.dao")
 public class DatacenterApplication {
     public static void main(String[] args) {
         SpringApplication.run(DatacenterApplication.class, args);

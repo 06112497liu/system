@@ -8,5 +8,5 @@ import com.lwb.entity.User;
  */
 public interface UserService {
 
-    User get(String username);
+    User getUserByName(String username);
 }
